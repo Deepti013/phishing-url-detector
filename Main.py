@@ -75,7 +75,7 @@ def to_vec(url):
 
 def predict_url(url):
     result = model.predict(to_vec(url))[0]
-    return "⚠️ Phishing Website" if result == "bad" else "✅ Safe Website"
+    return "Phishing Website" if result == "bad" else " Safe Website"
 
 gr.Interface(
     fn=predict_url,
@@ -84,4 +84,5 @@ gr.Interface(
     title="Phishing Website Detection",
     description="Check whether a URL is Safe or Phishing"
 ).launch()
+
 
